@@ -9,6 +9,12 @@ public class Main {
 
        loginTest.loginWithValidData();
 
+       WishlistTest wish = new WishlistTest();
+       wish.addToWishlistTest();
+
+       RegisterTest register = new RegisterTest();
+       register.getRegisterTest();
+
     }
 
 
