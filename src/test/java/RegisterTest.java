@@ -23,7 +23,7 @@ public class RegisterTest {
         driver.findElement(By.id("firstname")).sendKeys("Austin");
         driver.findElement(By.id("middlename")).sendKeys("Mary");
         driver.findElement(By.id("lastname")).sendKeys("Julya");
-        driver.findElement(By.id("email_address")).sendKeys("austin.mary6@yahoo.com");
+        driver.findElement(By.id("email_address")).sendKeys("austin.mary9@yahoo.com");
         driver.findElement(By.id("password")).sendKeys("acelasinume");
         driver.findElement(By.id("confirmation")).sendKeys("acelasinume");
         driver.findElement(By.cssSelector("#is_subscribed")).click();
