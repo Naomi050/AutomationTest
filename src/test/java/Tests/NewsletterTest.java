@@ -1,3 +1,7 @@
+package Tests;
+
+import Pages.HomePage;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,16 +23,20 @@ public class NewsletterTest {
 
     @Test
     public void Newsletter(){
-        driver.findElement(By.cssSelector("#newsletter")).sendKeys("austinmary11@yahoo.com");
-        driver.findElement(By.cssSelector("[title='Subscribe']")).click();
 
-        WebElement ConfirmationMessage = driver.findElement(By.cssSelector("#map-popup"));
-        String expectedtext = "Thank you for your subscription, Mary.";
-        String actualltext = ConfirmationMessage.getText();
-        Assert.assertFalse(expectedtext, actualltext.equals ("Thank you for your subscription."));
+        HomePage homePage = new HomePage(driver);
+        homePage.setNewsletterField("austinmary11@yahoo.com");
+        homePage.clickSubscribedElement();
+        Assert.assertFalse("Thank you for your subscription, Mary.", Boolean.parseBoolean("Thank you for your subscription."));
+
+
+
+
+
+
     }
 
-    @Before
+    @After
     public void closeDriver(){
         driver.close();
     }

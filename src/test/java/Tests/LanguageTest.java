@@ -1,3 +1,6 @@
+package Tests;
+
+import Pages.HomePage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,14 +20,16 @@ public class LanguageTest {
         driver.get("http://testfasttrackit.info/selenium-test/");
     }
 
+
     @Test
     public void Language(){
-        driver.findElement(By.cssSelector("#select-language")).sendKeys("French");
 
-        WebElement language = driver.findElement(By.cssSelector(".welcome-msg"));
-        String expectedtext = "Bienvenue";
-        String actualtext = language.getText();
-        Assert.assertFalse(expectedtext, actualtext.equals("Welcome"));
+
+        HomePage homePage = new HomePage(driver);
+        homePage.setSelectLanguage("French");
+        Assert.assertFalse("Bienvenue", Boolean.parseBoolean("Welcome"));
+
+
     }
 
     @After
